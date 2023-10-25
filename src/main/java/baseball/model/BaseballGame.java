@@ -28,7 +28,6 @@ public class BaseballGame {
 
     public int[] compareTwoNumbers() {
         int[] results = new int[2];
-
         for(int i = 0 ; i < userNumber.size();i++){
             if(userNumber.get(i)==computerNumber.get(i)){
                 results[0]++;
@@ -37,7 +36,6 @@ public class BaseballGame {
                 results[1]++;
             }
         }
-
         return results;
     }
 
