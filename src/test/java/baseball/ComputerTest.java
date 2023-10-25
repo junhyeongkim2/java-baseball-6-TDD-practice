@@ -10,12 +10,32 @@ import org.junit.jupiter.api.Test;
 public class ComputerTest {
 
 
+
     @Test
-    void 랜덤숫자생성테스트(){
+
+    void testValidComputerNumber(){
+        testRandomComputerNumberInRange();
+        testRandomComputerNumberInSize();
+    }
+
+    @Test
+    void testRandomComputerNumberInSize(){
         Computer computer = new Computer();
         List<Integer> computerNumber = computer.generateRandomComputerNumber();
         Assertions.assertEquals(3,computerNumber.size());
     }
+
+    @Test
+    void testRandomComputerNumberInRange(){
+        Computer computer = new Computer();
+        List<Integer> computerNumber = computer.generateRandomComputerNumber();
+        for(Integer num: computerNumber){
+            Assertions.assertTrue(num>=1&&num<=9);
+        }
+    }
+
+
+
 
 
 }
