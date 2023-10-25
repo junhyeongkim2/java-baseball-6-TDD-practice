@@ -13,7 +13,7 @@ public class ComputerTest {
     @Test
     void 랜덤숫자생성테스트(){
         Computer computer = new Computer();
-        List<Integer> computerNumber = computer.randomComputerNumber();
+        List<Integer> computerNumber = computer.generateRandomComputerNumber();
         Assertions.assertEquals(3,computerNumber.size());
 
 
