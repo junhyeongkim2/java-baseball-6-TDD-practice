@@ -15,8 +15,6 @@ public class ComputerTest {
         Computer computer = new Computer();
         List<Integer> computerNumber = computer.generateRandomComputerNumber();
         Assertions.assertEquals(3,computerNumber.size());
-
-
     }
 
 
