@@ -5,6 +5,7 @@ import baseball.model.Computer;
 import baseball.model.User;
 import baseball.view.InputView;
 import java.io.ByteArrayInputStream;
+import java.lang.reflect.Type;
 import java.util.List;
 import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
@@ -44,22 +45,28 @@ public class BaseballGameTest {
 
     }
 
-//    @Test
-//    void 공상태판별테스트(){
-//
-//        BaseballGame baseballGame = new BaseballGame();
-//        Computer computer = new Computer();
-//        InputView inputView = new InputView();
-//
-//        List <Integer> computerNumber = computer.generateRandomComputerNumber();
-//        String input = inputView.readUserNumber();
-//        List <Integer> userNumber = baseballGame.changeUserNumberToList(input);
-//
-//
-//        baseballGame.compareTwoNumbers();
-//
-//
-//    }
+    @Test
+    void 공상태판별테스트(){
+        ByteArrayInputStream fakeInput = new ByteArrayInputStream("123".getBytes());
+        System.setIn(fakeInput);
+
+        BaseballGame baseballGame = new BaseballGame();
+        InputView inputView = new InputView();
+
+        baseballGame.createComputerNumber();
+        String input = inputView.readUserNumber();
+        baseballGame.changeUserNumberToList(input);
+
+        int [] results = baseballGame.compareTwoNumbers();
+
+        Assertions.assertEquals(2,results.length);
+        Assertions.assertTrue(results[0]<=3);
+        Assertions.assertTrue(results[1]<=3);
+        Assertions.assertTrue(Integer.class.isInstance(results[0]));
+        Assertions.assertTrue(Integer.class.isInstance(results[1]));
+
+
+    }
 
 
 

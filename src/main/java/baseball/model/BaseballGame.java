@@ -25,6 +25,27 @@ public class BaseballGame {
         this.computerNumber = computer.generateRandomComputerNumber();
         return this.computerNumber;
     }
+
+    public int[] compareTwoNumbers() {
+        int[] results = new int[2];
+
+        for(int i = 0 ; i < userNumber.size();i++){
+            if(userNumber.get(i)==computerNumber.get(i)){
+                results[0]++;
+            }
+            if(computerNumber.contains(userNumber.get(i))){
+                results[1]++;
+            }
+        }
+
+        return results;
+    }
+
+
+
+
+
+
 }
 
 
