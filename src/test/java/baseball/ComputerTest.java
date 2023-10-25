@@ -12,7 +12,6 @@ public class ComputerTest {
 
 
     @Test
-
     void testValidComputerNumber(){
         testRandomComputerNumberInRange();
         testRandomComputerNumberInSize();
@@ -33,9 +32,6 @@ public class ComputerTest {
             Assertions.assertTrue(num>=1&&num<=9);
         }
     }
-
-
-
 
 
 }
